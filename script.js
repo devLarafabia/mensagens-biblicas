@@ -1,4 +1,4 @@
-/*
+
 function ajax_get(url, callback) {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -19,12 +19,8 @@ function ajax_get(url, callback) {
 }
 
 ajax_get('https://www.abibliadigital.com.br/api/verses/nvi/random', function(data) {
-  console.log(data)
-  // document.getElementById("id").innerHTML = JSON.stringify(data);
-  // document.getElementById("url").innerHTML = data[0]["url"];
-
-  // var html = '<img src="' + data[0]["url"] + '">';
-  // document.getElementById("image").innerHTML = html;
-  
-});
-*/
+  document.getElementById("text").innerHTML = JSON.stringify(data.text);
+  document.getElementById("author").innerHTML = JSON.stringify(data.book.author);
+  document.getElementById("chapter").innerHTML = JSON.stringify(data.chapter); 
+  document.getElementById("versus").innerHTML = JSON.stringify(data.number) ;
+}); 
